@@ -1,0 +1,2 @@
+# Lus
+A coding language :)
