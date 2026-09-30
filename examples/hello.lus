@@ -1,0 +1,11 @@
+// Your first Kel program. Run it with: kel run examples/hello.lus
+fn main {
+    say "Hello, Kel!"
+    let name = "Kelus"   // let = can't change
+    var age = 14         // var = can change
+    age += 1
+    say "{name} is {age} years old"
+    repeat 3 {
+        say "Hip hip hooray!"
+    }
+}

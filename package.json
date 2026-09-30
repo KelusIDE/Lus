@@ -1,0 +1,12 @@
+{
+  "name": "kel",
+  "version": "0.1.0",
+  "description": "Kel: a beginner-friendly language that compiles to WebAssembly",
+  "type": "module",
+  "bin": { "kel": "bin/kel.js" },
+  "scripts": {
+    "test": "node tests/run.js",
+    "play": "node web/serve.js"
+  },
+  "engines": { "node": ">=18" }
+}

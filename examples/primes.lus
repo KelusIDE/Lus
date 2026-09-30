@@ -1,0 +1,19 @@
+// Counts prime numbers up to a limit: a small speed test.
+fn is_prime(n: int) -> bool {
+    if n < 2 { return false }
+    var d = 2
+    while d * d <= n {
+        if n % d == 0 { return false }
+        d += 1
+    }
+    return true
+}
+
+fn main {
+    let limit = 2_000_000
+    var count = 0
+    for n in 2..limit {
+        if is_prime(n) { count += 1 }
+    }
+    say "Primes up to {limit}: {count}"
+}

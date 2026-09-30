@@ -1,0 +1,25 @@
+// if / else if / else, text, and converting between number types.
+fn grade(score: float) -> str {
+    if score >= 90.0 {
+        return "A"
+    } else if score >= 80.0 {
+        return "B"
+    } else if score >= 70.0 {
+        return "C"
+    }
+    return "Keep going!"
+}
+
+fn average(total: int, count: int) -> float {
+    return float(total) / float(count)
+}
+
+fn main {
+    let avg = average(257, 3)
+    say "Average: {avg}"
+    say "Grade: " + grade(avg)
+    say "Rounded down: {int(avg)}"
+    say avg > 80.0 && !(avg > 90.0)
+    let word = "Kel"
+    say "'{word}' has {len(word)} letters"
+}

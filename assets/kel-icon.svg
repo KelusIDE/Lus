@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Kel">
+  <defs>
+    <linearGradient id="kel-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffa35c"/>
+      <stop offset="0.55" stop-color="#ff6a5e"/>
+      <stop offset="1" stop-color="#e8366f"/>
+    </linearGradient>
+    <linearGradient id="kel-shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="url(#kel-bg)"/>
+  <rect width="512" height="256" rx="116" fill="url(#kel-shine)"/>
+  <g fill="none" stroke="#fff" stroke-width="70" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M168 136V376"/>
+    <path d="M326 136L206 256L326 376"/>
+  </g>
+  <path d="M408 76Q414 112 450 118Q414 124 408 160Q402 124 366 118Q402 112 408 76Z" fill="#fff6c9"/>
+</svg>
