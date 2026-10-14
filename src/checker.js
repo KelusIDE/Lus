@@ -1,6 +1,3 @@
-// Checks types before any code runs, so mistakes show up with a clear message instead of a crash.
-// It also annotates the tree for the code generator: every expression gets `type`,
-// every variable gets a `local` slot, and every function gets its `locals` list.
 import { KelError } from './lexer.js';
 
 const MAX_INT = 2n ** 63n - 1n;
