@@ -1,0 +1,10 @@
+{
+  "format": "kelus-stc",
+  "version": 1,
+  "language": "python",
+  "level": "intermediate",
+  "goal": "i want to learn python timestamp using pandas",
+  "basics": false,
+  "stage": 2,
+  "cells": []
+}
