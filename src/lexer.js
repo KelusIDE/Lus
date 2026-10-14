@@ -1,5 +1,3 @@
-// Turns Kel source text into tokens. Blocks use { }, and a line break ends a statement
-// (except inside ( ), so long calls can wrap). Text in "quotes" can hold {expressions}.
 
 export class KelError extends Error {
   constructor(message, line, col) {
@@ -12,7 +10,6 @@ export class KelError extends Error {
 const KEYWORDS = new Set(['fn', 'let', 'var', 'if', 'else', 'while', 'repeat', 'for', 'in', 'return', 'say', 'true', 'false']);
 const SYMBOLS = ['->', '..', '==', '!=', '<=', '>=', '&&', '||', '+=', '-=', '*=', '/=', '%=',
   '+', '-', '*', '/', '%', '<', '>', '=', '!', '(', ')', '{', '}', ',', ':', ';'];
-// Habits from other languages, with a hint instead of a bare "unknown".
 const WORD_HINTS = {
   and: "Kel writes 'and' as &&", or: "Kel writes 'or' as ||", not: "Kel writes 'not' as !",
   def: 'Kel makes functions with fn', function: 'Kel makes functions with fn', func: 'Kel makes functions with fn',
@@ -26,11 +23,10 @@ const SYMBOL_HINTS = {
   '[': 'Lists are not in Kel yet (they are on the roadmap)'
 };
 
-/** `line`/`col` place the tokens of a {template} part at its spot in the file. */
 export function lex(source, line = 1, col = 1) {
   const tokens = [];
   const text = source.replace(/\r\n?/g, '\n');
-  let depth = 0; // ( ) nesting: line breaks inside parentheses don't end a statement
+  let depth = 0;
   let i = 0;
   const fail = (message) => { throw new KelError(message, line, col); };
   const advance = (count) => { for (let n = 0; n < count; n++) { if (text[i] === '\n') { line++; col = 1; } else col++; i++; } };
@@ -73,7 +69,6 @@ export function lex(source, line = 1, col = 1) {
   tokens.push({ type: 'eof', line, col });
   return tokens;
 
-  // "Hi {name}!" -> ['Hi ', { tokens of `name` }, '!']
   function stringParts() {
     const open = { line, col };
     const parts = [];
